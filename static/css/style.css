@@ -1,0 +1,224 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #202b3c;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #172b4d;
+    color: white;
+    padding: 22px 50px;
+}
+
+header h2 {
+    font-size: 26px;
+}
+
+header p {
+    color: #c5d3e5;
+    margin-top: 5px;
+}
+
+/* Main section */
+main {
+    max-width: 900px;
+    margin: 55px auto;
+    padding: 35px;
+    background-color: white;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+main h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+main > p {
+    color: #65748b;
+    margin-bottom: 25px;
+}
+
+/* Text area */
+textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 16px;
+    border: 1px solid #ccd5e0;
+    border-radius: 9px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+    outline: none;
+    line-height: 1.6;
+}
+
+textarea:focus {
+    border-color: #2878d0;
+}
+
+/* Scan button */
+button {
+    margin-top: 18px;
+    padding: 12px 30px;
+    background-color: #2878d0;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #1c5fa9;
+}
+
+button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* Results section */
+#result {
+    margin-top: 35px;
+}
+
+.result-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #172b4d;
+}
+
+.section-title {
+    font-size: 19px;
+    margin: 28px 0 15px;
+}
+
+/* Summary card */
+.summary-card {
+    background-color: #edf4ff;
+    border: 1px solid #d6e6fa;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-card p {
+    color: #405674;
+    font-weight: 600;
+}
+
+.summary-card h2 {
+    font-size: 30px;
+    color: #2878d0;
+}
+
+/* Detection cards */
+.detection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.detection-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e6ef;
+    border-left: 4px solid #e39a35;
+    border-radius: 9px;
+    padding: 18px;
+    min-width: 0;
+}
+
+.category-label {
+    display: inline-block;
+    background-color: #fff3df;
+    color: #9b6217;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.detected-value {
+    font-size: 15px;
+    color: #27364a;
+    overflow-wrap: anywhere;
+}
+
+.no-results {
+    color: #25834e;
+    background-color: #eaf7ef;
+    padding: 18px;
+    border-radius: 8px;
+}
+
+/* Redacted text */
+.redacted-box {
+    margin-top: 30px;
+    padding: 22px;
+    background-color: #edf8f1;
+    border: 1px solid #cdebd7;
+    border-radius: 10px;
+}
+
+.redacted-box h3 {
+    color: #17643a;
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.redacted-box > p {
+    color: #64806d;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.redacted-text {
+    background-color: white;
+    border: 1px solid #d9e9df;
+    border-radius: 8px;
+    padding: 16px;
+    color: #30483a;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    line-height: 1.8;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+
+    header {
+        padding: 20px;
+    }
+
+    main {
+        margin: 20px 12px;
+        padding: 22px;
+    }
+
+    main h1 {
+        font-size: 24px;
+    }
+
+    .summary-card {
+        gap: 12px;
+    }
+
+    .detection-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
