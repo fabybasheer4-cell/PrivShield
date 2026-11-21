@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrivShield - Privacy Protection</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h2>PrivShield</h2>
+        <p>Your Privacy. Your Control.</p>
+    </header>
+
+    <main>
+        <h1>Protect Your Personal Information</h1>
+        <p>Scan your text and identify sensitive information before sharing it.</p>
+
+        <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+
+        <button id="scanButton">Scan Text</button>
+
+        <div id="result"></div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
