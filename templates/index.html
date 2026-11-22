@@ -1,13 +1,16 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>PrivShield - Privacy Protection</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
 
     <header>
@@ -16,17 +19,109 @@
     </header>
 
     <main>
+
         <h1>Protect Your Personal Information</h1>
-        <p>Scan your text and identify sensitive information before sharing it.</p>
 
-        <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+        <p class="intro">
+            Scan your text or upload a text file to identify
+            sensitive information before sharing it.
+        </p>
 
-        <button id="scanButton">Scan Text</button>
+        <section class="scan-section">
 
+            <h2>Scan Your Content</h2>
+
+            <p class="scan-description">
+                Choose a scanning method to get started.
+            </p>
+
+            <!-- Scanning tabs -->
+            <div class="scan-tabs">
+
+                <button
+                    type="button"
+                    class="tab-button active"
+                    id="textTab"
+                    onclick="showTab('text')">
+                    Paste Text
+                </button>
+
+                <button
+                    type="button"
+                    class="tab-button"
+                    id="fileTab"
+                    onclick="showTab('file')">
+                    Upload File
+                </button>
+
+            </div>
+
+
+            <!-- Text scanning panel -->
+            <div class="tab-content active" id="textPanel">
+
+                <h3>Paste Your Text</h3>
+
+                <textarea
+                    id="inputText"
+                    placeholder="Paste your text here..."
+                ></textarea>
+
+                <div class="button-container">
+                    <button id="scanButton" type="button">
+                        Scan Text
+                    </button>
+                </div>
+
+            </div>
+
+
+            <!-- File upload panel -->
+            <div class="tab-content" id="filePanel">
+
+                <h3>Upload a TXT File</h3>
+
+                <label for="fileInput" class="upload-area">
+
+                    <span class="upload-icon">↑</span>
+
+                    <strong>Choose a file</strong>
+
+                    <span class="upload-description">
+                        TXT format · Maximum size 2 MB
+                    </span>
+
+                    <span id="fileName" class="file-name">
+                        No file selected
+                    </span>
+
+                </label>
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    accept=".txt,text/plain"
+                    hidden
+                >
+
+                <div class="button-container">
+                    <button id="scanFileButton" type="button">
+                        Scan File
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Results -->
         <div id="result"></div>
+
     </main>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
+
 </html>
