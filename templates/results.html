@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Results | PrivShield</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>PrivShield</h1>
+        <p>Your privacy, protected.</p>
+    </header>
+
+    <main>
+
+        <section class="results-page">
+
+            <div class="results-heading">
+                <h2>Scan Results</h2>
+                <p>Review the sensitive information detected in your content.</p>
+            </div>
+
+            <div id="summary" class="summary-card"></div>
+
+            <div class="results-card">
+                <h3>Detected Information</h3>
+                <div id="detectionList"></div>
+            </div>
+
+            <div class="results-card" id="protectedSection">
+                <div class="protected-heading">
+                    <h3>Protected Text</h3>
+                    <button id="copyButton" class="copy-button">
+                        Copy Protected Text
+                    </button>
+                </div>
+
+                <pre id="protectedText"></pre>
+            </div>
+
+            <div class="results-actions">
+                <button onclick="window.location.href='/'">
+                    Scan Another
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='js/results.js') }}"></script>
+
+</body>
+</html>

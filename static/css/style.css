@@ -20,23 +20,23 @@ body {
    2. HEADER
 ===================================== */
 
-header {
-    background-color: #1e3a5f;
-    color: white;
-    text-align: center;
-    padding: 22px;
-}
-
+header h1,
 header h2 {
     margin: 0;
-    font-size: 28px;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #ffffff;
 }
 
 header p {
-    margin: 5px 0 0;
-    color: #dbeafe;
+    margin: 4px 0 0;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: #cbdcf2;
 }
-
 
 /* =====================================
    3. MAIN CONTAINER
@@ -420,5 +420,227 @@ button:disabled {
 
     .summary-card {
         padding: 12px;
+    }
+}
+
+/* =====================================
+   17. RESULTS PAGE DESIGN
+===================================== */
+
+.results-page {
+    width: 100%;
+}
+
+.results-heading {
+    margin-bottom: 25px;
+}
+
+.results-heading h2 {
+    color: #1e3a5f;
+    font-size: 26px;
+    margin: 0;
+}
+
+.results-heading p {
+    color: #64748b;
+    margin: 5px 0 0;
+}
+
+
+/* Summary */
+
+#summary.summary-card {
+    display: block;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+}
+
+#summary h3 {
+    color: #1e40af;
+    margin: 0 0 5px;
+    font-size: 19px;
+}
+
+#summary p {
+    color: #475569;
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/* Results cards */
+
+.results-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 22px;
+}
+
+.results-card h3 {
+    color: #1e3a5f;
+    font-size: 18px;
+    margin: 0 0 18px;
+}
+
+
+/* Detection grid */
+
+#detectionList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+#detectionList .detection-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #f59e0b;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+#detectionList .detection-card h4 {
+    color: #1e40af;
+    font-size: 14px;
+    margin: 0 0 8px;
+}
+
+#detectionList .detection-card p {
+    color: #334155;
+    font-size: 14px;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+
+/* No detections */
+
+#detectionList:has(:only-child) {
+    color: #166534;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+
+/* Protected text */
+
+.protected-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.protected-heading h3 {
+    margin-bottom: 0;
+}
+
+#protectedText {
+    background: #f8fafc;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px;
+    margin: 18px 0 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+
+/* Copy button */
+
+.results-card .copy-button {
+    margin-top: 0;
+}
+
+
+/* Navigation */
+
+.results-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+}
+
+.results-actions button {
+    margin-top: 0;
+    padding: 12px 24px;
+    font-weight: 600;
+}
+
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+
+    .results-heading h2 {
+        font-size: 23px;
+    }
+
+    .results-card {
+        padding: 16px;
+    }
+
+    #detectionList {
+        grid-template-columns: 1fr;
+    }
+
+    .protected-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .results-actions button {
+        width: 100%;
+    }
+}
+/* PrivShield header - shared by both pages */
+
+body > header {
+    display: block;
+    width: 100%;
+    background-color: #1e3a5f;
+    padding: 24px 40px;
+    text-align: left;
+}
+
+body > header h1,
+body > header h2 {
+    margin: 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+}
+
+body > header p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: #cbdcf2;
+}
+
+@media (max-width: 600px) {
+    body > header {
+        padding: 20px;
+    }
+
+    body > header h1,
+    body > header h2 {
+        font-size: 30px;
     }
 }

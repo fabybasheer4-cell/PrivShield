@@ -15,6 +15,10 @@ app.config["MAX_CONTENT_LENGTH"] = 2 * 1024 * 1024
 def home():
     return render_template("index.html")
 
+# Results page
+@app.route("/results")
+def results():
+    return render_template("results.html")
 
 # Scan pasted text
 @app.route("/scan", methods=["POST"])
